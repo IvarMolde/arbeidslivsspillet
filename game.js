@@ -283,7 +283,7 @@ const QUESTIONS = [
     exp:'Du må ha skattekort for å jobbe i Norge. Du henter det på skatteetaten.no.' },
 
   { id:'s-a1-6', level:'A1', cat:'skatt', catName:'Skatt', catIcon:'💰', catColor:'#E65100',
-    type:'mc', q:'Hva finner du på lønnsslippen?',
+    type:'mc', q:'Hvilken viktig informasjon viser lønnsslippen din?',
     opts:['Adressen din','Hvor mye du har tjent og betalt i skatt','Din CV'], ans:1,
     exp:'Lønnsslippen viser bruttoinntekt, skattetrekk og nettoinntekt (det du faktisk får utbetalt).' },
 
@@ -304,7 +304,7 @@ const QUESTIONS = [
     exp:'Gå til skatteetaten.no for å hente eller endre skattekortet ditt.' },
 
   { id:'s-a2-4', level:'A2', cat:'skatt', catName:'Skatt', catIcon:'💰', catColor:'#E65100',
-    type:'mc', q:'Hva er skattemeldingen?',
+    type:'mc', q:'Hva er en  skattemelding?',
     opts:['En melding om ny skatteregel','En årlig oversikt over inntekt og betalt skatt','En faktura fra Skatteetaten'], ans:1,
     exp:'Skattemeldingen (selvangivelsen) viser all inntekt og skatt for ett år. Du leverer den hvert vår.' },
 
@@ -326,7 +326,7 @@ const QUESTIONS = [
 
   { id:'s-b1-2', level:'B1', cat:'skatt', catName:'Skatt', catIcon:'💰', catColor:'#E65100',
     type:'mc', q:'Hva er et D-nummer?',
-    opts:['Et midlertidig personnummer for utenlandske statsborgere uten fast bosted i Norge','Et nummer på arbeidsavtalen','NAVs saksnummer for deg'], ans:0,
+    opts:['Et midlertidig personnummer for utenlandske statsborgere uten fast bosted i Norge','Et nummer på arbeidsavtalen som viser hvor mye penger du skal tjene','NAVs saksnummer for deg'], ans:0,
     exp:'D-nummeret brukes til skatt og andre registreringer for utenlandske arbeidstakere.' },
 
   { id:'s-b1-3', level:'B1', cat:'skatt', catName:'Skatt', catIcon:'💰', catColor:'#E65100',
@@ -335,7 +335,7 @@ const QUESTIONS = [
     exp:'Riktig! Endre skattekortet på skatteetaten.no hvis du bytter jobb eller får ny inntekt.' },
 
   { id:'s-b1-4', level:'B1', cat:'skatt', catName:'Skatt', catIcon:'💰', catColor:'#E65100',
-    type:'mc', q:'Hva er «minstefradraget»?',
+    type:'mc', q:'Hva er « et minstefradrag»?',
     opts:['Et standardfradrag som reduserer den skattemessige inntekten din','Den laveste mulige skatten','En ytelse fra NAV'], ans:0,
     exp:'Minstefradraget er et automatisk fradrag de fleste lønnstakere får, for å redusere skatten.' },
 
@@ -351,7 +351,7 @@ const QUESTIONS = [
 
   // B2
   { id:'s-b2-1', level:'B2', cat:'skatt', catName:'Skatt', catIcon:'💰', catColor:'#E65100',
-    type:'mc', q:'Hva betyr «skattefradrag»?',
+    type:'mc', q:'Hva betyr «et skattefradrag»?',
     opts:['Et beløp som trekkes fra den skattemessige inntekten og reduserer skatten','Et beløp trekket direkte fra lønnen','En straffegebyr fra Skatteetaten'], ans:0,
     exp:'Skattefradrag reduserer skattegrunnlaget ditt – for eksempel fradrag for fagforeningskontingent.' },
 
@@ -366,7 +366,7 @@ const QUESTIONS = [
     exp:'Arbeidsgiver er lovpålagt å rapportere alle lønnsutbetalinger via a-meldingen hver måned.' },
 
   { id:'s-b2-4', level:'B2', cat:'skatt', catName:'Skatt', catIcon:'💰', catColor:'#E65100',
-    type:'mc', q:'Hva er «a-melding»?',
+    type:'mc', q:'Hva er en «a-melding»?',
     opts:['En månedlig rapport arbeidsgiver sender til Skatteetaten om ansattes lønn','En melding til Arbeidstilsynet om ny ansatt','Et trygdeskjema'], ans:0,
     exp:'A-meldingen sendes månedlig til Skatteetaten/NAV/SSB og inneholder lønns- og ansettelsesdata.' },
 
@@ -383,12 +383,12 @@ const QUESTIONS = [
   /* ===================== EGENMELDING ===================== */
   // A1
   { id:'e-a1-1', level:'A1', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
-    type:'mc', q:'Hva gjør du den første dagen du er syk og ikke kan jobbe?',
+    type:'mc', q:'Hva bør du gjøre du den første dagen du er syk og ikke kan jobbe?',
     opts:['Ingenting','Ringer arbeidsgiveren din','Drar til legen'], ans:1,
     exp:'Du skal alltid ringe eller sende melding til arbeidsgiver så tidlig som mulig.' },
 
   { id:'e-a1-2', level:'A1', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
-    type:'mc', q:'Hva er egenmelding?',
+    type:'mc', q:'Hva er en egenmelding?',
     opts:['Du skriver selv at du var syk','Legen skriver at du var syk','NAV skriver at du var syk'], ans:0,
     exp:'Egenmelding er når du selv melder fra om sykdom, uten legeerklæring.' },
 
@@ -398,7 +398,7 @@ const QUESTIONS = [
     exp:'Riktig! Egenmelding kan brukes ved korte sykdomsperioder.' },
 
   { id:'e-a1-4', level:'A1', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
-    type:'mc', q:'Hva er sykemelding?',
+    type:'mc', q:'Hva er en sykemelding?',
     opts:['Et dokument fra legen som sier du er syk','Et dokument du skriver selv','Et brev fra NAV'], ans:0,
     exp:'Sykemelding er en legeerklæring som bekrefter at du er for syk til å jobbe.' },
 
@@ -415,8 +415,8 @@ const QUESTIONS = [
   // A2
   { id:'e-a2-1', level:'A2', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
     type:'mc', q:'Hvor mange dager kan du bruke egenmelding i strekk?',
-    opts:['Opptil 3 dager','Opptil 14 dager','Ubegrenset'], ans:0,
-    exp:'Du kan bruke egenmelding i inntil 3 dager av gangen.' },
+    opts:['Opptil 3 dager','Opptil 30 dager','Ubegrenset'], ans:0,
+    exp:'Du kan bruke egenmelding i inntil 3 dager av gangen. I noen tilfeller gjelder 16 dager.' },
 
   { id:'e-a2-2', level:'A2', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
     type:'mc', q:'Når du er syk i mer enn 3 dager, hva trenger du?',
@@ -446,7 +446,7 @@ const QUESTIONS = [
   // B1
   { id:'e-b1-1', level:'B1', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
     type:'mc', q:'Hva er «arbeidsgiverperioden» ved sykdom?',
-    opts:['De første 16 kalenderdagene der arbeidsgiver betaler sykepenger','En prøvetid for nye ansatte','Perioden NAV vurderer søknaden'], ans:0,
+    opts:['De første 16 dagene der arbeidsgiver betaler sykepenger','En prøvetid for nye ansatte','Perioden NAV vurderer søknaden'], ans:0,
     exp:'I arbeidsgiverperioden (16 dager) betaler arbeidsgiver 100 % sykepenger.' },
 
   { id:'e-b1-2', level:'B1', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
@@ -465,8 +465,8 @@ const QUESTIONS = [
     exp:'Etter 52 uker stanser sykepengene. NAV vil avklare din arbeidsevne og fremtidige muligheter.' },
 
   { id:'e-b1-5', level:'B1', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
-    type:'mc', q:'Hva er «karensdager»?',
-    opts:['Dager uten sykepenger – brukes i noen land, men ikke i Norge','Dager med ekstra sykepenger','Fridager etter sykemelding'], ans:0,
+    type:'mc', q:'Hva menes med «karensdager»?',
+    opts:['Dager med sykdom, men uten sykepenger','Dager med ekstra sykepenger','Fridager etter sykemelding'], ans:0,
     exp:'I Norge har vi ingen karensdager – du får sykepenger fra første sykedag.' },
 
   { id:'e-b1-6', level:'B1', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
@@ -476,12 +476,12 @@ const QUESTIONS = [
 
   // B2
   { id:'e-b2-1', level:'B2', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
-    type:'mc', q:'Hva er «gradert sykemelding»?',
+    type:'mc', q:'Hva er en «gradert sykemelding»?',
     opts:['En sykemelding der du jobber delvis og er delvis sykmeldt','En sykemelding med karakterer fra legen','En permanent uføremelding'], ans:0,
     exp:'Gradert sykmelding (f.eks. 50 %) betyr at du jobber halvparten og er sykmeldt for resten.' },
 
   { id:'e-b2-2', level:'B2', cat:'egenmelding', catName:'Sykdom og fravær', catIcon:'🤒', catColor:'#1B5E20',
-    type:'mc', q:'Hva innebærer «aktivitetsplikten» ved sykdom?',
+    type:'mc', q:'Hva innebærer «aktivitetsplikt» ved sykdom?',
     opts:['Sykmeldte plikter å forsøke arbeidsrelaterte aktiviteter med mindre medisinske grunner hindrer det','At du må trene daglig under sykmelding','At du må dokumentere alle aktiviteter for NAV'], ans:0,
     exp:'Aktivitetsplikten skal hjelpe sykmeldte tilbake i arbeid raskere.' },
 
@@ -510,7 +510,7 @@ const QUESTIONS = [
   { id:'r-a1-1', level:'A1', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
     type:'mc', q:'Har du rett til pauser på jobb?',
     opts:['Ja','Nei','Bare av og til'], ans:0,
-    exp:'Alle ansatte har rett til pauser. Etter 5,5 timers arbeid har du rett til minst 30 minutter pause.' },
+    exp:'Etter 5,5 timers arbeid har du rett til minst pause.' },
 
   { id:'r-a1-2', level:'A1', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
     type:'tf', q:'Du har rett til ferie hvert år i Norge.',
@@ -518,12 +518,12 @@ const QUESTIONS = [
     exp:'Riktig! I Norge har alle ansatte rett til minst 4 uker og 1 dag ferie hvert år.' },
 
   { id:'r-a1-3', level:'A1', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva er din plikt som ansatt?',
+    type:'mc', q:'Hvilke av alternativene er din plikt som ansatt?',
     opts:['Møte opp på jobb til riktig tid','Kjøpe lunsj til sjefen','Vaske sjefen sin bil'], ans:0,
     exp:'Du plikter å møte opp til arbeid til avtalt tid og utføre jobben din.' },
 
   { id:'r-a1-4', level:'A1', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva gjør du hvis du skal komme for sent til jobb?',
+    type:'mc', q:'Hva bør du gjøre hvis du hvis du skal komme for sent til jobb?',
     opts:['Ingenting','Si fra til arbeidsgiver','Sende en melding til familien'], ans:1,
     exp:'Du plikter å varsle arbeidsgiver hvis du skal komme for sent.' },
 
@@ -534,12 +534,12 @@ const QUESTIONS = [
 
   { id:'r-a1-6', level:'A1', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
     type:'fill', q:'Normal arbeidsuke i Norge er ___ timer.',
-    opts:['37,5','40','45'], ans:0,
-    exp:'Normal arbeidstid i Norge er 37,5 timer per uke for fulltidsansatte.' },
+    opts:['37,5','45','50'], ans:0,
+    exp:'Normal arbeidstid i Norge er 37,5 timer per uke for fulltidsansatte. Noen har også 40 timers arbeidsuke' },
 
   // A2
   { id:'r-a2-1', level:'A2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva er oppsigelsestid?',
+    type:'mc', q:'Hva er en oppsigelsestid?',
     opts:['Perioden fra du sier opp til du slutter','Frist for å søke ny jobb','Tid du har på å svare på et jobbtilbud'], ans:0,
     exp:'Oppsigelsestid er perioden du fortsatt jobber etter at du eller arbeidsgiver har sagt opp.' },
 
@@ -550,18 +550,18 @@ const QUESTIONS = [
 
   { id:'r-a2-3', level:'A2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
     type:'mc', q:'Hva forbyr diskrimineringsloven på arbeidsplassen?',
-    opts:['Å ha ulike meninger','Å behandle folk dårligere pga. kjønn, religion, alder osv.','Å ta pauser'], ans:1,
+    opts:['Å ha ulike meninger','Å behandle folk dårligere pga. kjønn, religion, alder osv.','Å ta pauser oftere enn avtalt'], ans:1,
     exp:'Du kan ikke diskrimineres på grunn av kjønn, alder, etnisitet, religion eller funksjonsnedsettelse.' },
 
   { id:'r-a2-4', level:'A2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
     type:'mc', q:'Hva er «overtid»?',
-    opts:['Arbeid utover normal arbeidstid som gir rett til overtidstillegg','Arbeid du gjør gratis','Ekstra ferie'], ans:0,
+    opts:['Arbeid utover normal arbeidstid','Arbeid du gjør gratis','Ekstra ferie om sommeren'], ans:0,
     exp:'Overtid er arbeid utover 37,5 timer per uke. Du har krav på minst 40 % tillegg.' },
 
   { id:'r-a2-5', level:'A2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'fill', q:'Du har rett til ___ pause etter 5,5 timers arbeid.',
+    type:'fill', q:'Du har rett til ___ pause etter 8 timers arbeid.',
     opts:['30 minutters','5 minutters','2 timers'], ans:0,
-    exp:'Etter 5,5 timers sammenhengende arbeid har du rett til minst 30 minutters pause.' },
+    exp:'Etter 8 timers sammenhengende arbeid har du rett til minst 30 minutters pause.' },
 
   { id:'r-a2-6', level:'A2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
     type:'mc', q:'Hva er din plikt hvis du vet at du ikke kan møte på jobb?',
@@ -585,7 +585,7 @@ const QUESTIONS = [
     exp:'Varsling er å melde fra om kritikkverdige forhold – du er beskyttet mot gjengjeldelse ved varsling.' },
 
   { id:'r-b1-4', level:'B1', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva er rett til medbestemmelse?',
+    type:'mc', q:'Hva menes med "rett til medbestemmelse"?',
     opts:['Ansatte og tillitsvalgte har rett til å delta i beslutningsprosesser som angår dem','Alle ansatte bestemmer like mye som sjefen','Ansatte velger sin arbeidstid'], ans:0,
     exp:'Norsk lov gir ansatte og tillitsvalgte rett til informasjon og medvirkning i bedriften.' },
 
@@ -601,12 +601,12 @@ const QUESTIONS = [
 
   // B2
   { id:'r-b2-1', level:'B2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva er «sterkt stillingsvern» i Norge?',
+    type:'mc', q:'Hva menes med at det er et  «sterkt stillingsvern» i Norge?',
     opts:['Arbeidstaker kan bare sies opp på saklig grunnlag – noe som gir stor trygghet','At man aldri kan sies opp','At oppsigelse må godkjennes av Stortinget'], ans:0,
     exp:'Norsk stillingsvern er sterkt: arbeidsgiver må ha saklig grunn (økonomi, adferd el. egnethet).' },
 
   { id:'r-b2-2', level:'B2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva er «fortrinnsrett»?',
+    type:'mc', q:'Hva mens med «fortrinnsrett til en stilling»?',
     opts:['Tidligere deltidsansatte har fortrinnsrett til utvidet stilling framfor nyansettelse','Seniorer har fortrinnsrett til alle stillinger','Alle ansatte søker interne stillinger først'], ans:0,
     exp:'AML § 14-3 gir deltidsansatte fortrinnsrett til utvidet stilling fremfor nyansettelse.' },
 
@@ -621,12 +621,12 @@ const QUESTIONS = [
     exp:'Kollektiv arbeidsrett regulerer forholdet mellom fagforeninger, arbeidsgivere og deres organisasjoner.' },
 
   { id:'r-b2-5', level:'B2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva er «bedriftsdemokratiet» i norsk rett?',
+    type:'mc', q:'Hva menes med «bedriftsdemokratiet» i norsk rett?',
     opts:['Ansattes rett til å velge representanter til bedriftens styrende organer','Direktedemokrati der alle ansatte stemmer','At bedriften støtter lokalt demokrati'], ans:0,
     exp:'I større bedrifter har ansatte rett til styrerepresentasjon etter aksjeloven og representasjonsforskriften.' },
 
   { id:'r-b2-6', level:'B2', cat:'rettigheter', catName:'Rettigheter og plikter', catIcon:'⚖️', catColor:'#1A237E',
-    type:'mc', q:'Hva er «likestillings- og diskrimineringsloven»?',
+    type:'mc', q:'Hva er en viktig bestemmelse i «likestillings- og diskrimineringsloven»?',
     opts:['Loven som forbyr diskriminering og sikrer likeverd uavhengig av kjønn, etnisitet, religion m.m.','En lov om lik lønn kun i offentlig sektor','En lov om lik arbeidstid'], ans:0,
     exp:'Loven dekker alle diskrimineringsgrunnlag og gjelder for hele arbeidslivet.' },
 
@@ -638,7 +638,7 @@ const QUESTIONS = [
     exp:'Ja! I Norge er det vanlig og akseptert å kalle sjefen ved fornavn.' },
 
   { id:'ak-a1-2', level:'A1', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'tf', q:'Det er viktig å komme presist til jobb i Norge.',
+    type:'tf', q:'Det er viktig å komme presist på jobb i Norge.',
     ans:true,
     exp:'Riktig! Punktlighet er viktig i norsk arbeidskultur. Kom i tide – helst litt før.' },
 
@@ -669,9 +669,9 @@ const QUESTIONS = [
     exp:'Flat struktur betyr at det er kort avstand mellom ansatte og ledelse – og lite hierarki.' },
 
   { id:'ak-a2-2', level:'A2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva snakker man gjerne om i lunsjpausen i Norge?',
+    type:'mc', q:'Hva er ofte et vanlige temaer å snakke om i lunsjpausen i Norge?',
     opts:['Vær, helg, TV og fritid','Politikk og religion','Kollegers privatliv'], ans:0,
-    exp:'Lys smalltalk om vær, helg, natur og hverdagsliv er vanlig og akseptert.' },
+    exp:'Litt prat om vær, helg, natur og hverdagsliv er vanlig.' },
 
   { id:'ak-a2-3', level:'A2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
     type:'tf', q:'I Norge sier folk «hei» og bruker fornavn til alle, uansett stilling.',
@@ -679,12 +679,12 @@ const QUESTIONS = [
     exp:'Riktig! Uformell hilsing og fornavn er normen på norske arbeidsplasser.' },
 
   { id:'ak-a2-4', level:'A2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva er «dugnadsånd»?',
+    type:'mc', q:'Hva menes med «dugnadsånd»?',
     opts:['Frivillig samarbeid for felles nytte','En type norsk mat','En ny type arbeidstid'], ans:0,
     exp:'Dugnad er en norsk tradisjon med frivillig fellesarbeid. Denne ånden preger mange arbeidsplasser.' },
 
   { id:'ak-a2-5', level:'A2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva er «work-life balance»?',
+    type:'mc', q:'Hva menes med «work-life balance»?',
     opts:['Balanse mellom jobb og privatliv','Et treningsprogram','En regel om arbeidstid'], ans:0,
     exp:'Norge scorer høyt på work-life balance. Privatliv og familietid er verdsatt.' },
 
@@ -705,12 +705,12 @@ const QUESTIONS = [
     exp:'Riktig! Norsk lederstil er delegerende – ansatte forventes å ta ansvar uten detaljstyring.' },
 
   { id:'ak-b1-3', level:'B1', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva er «Janteloven»?',
+    type:'mc', q:'Hva menes med «Janteloven»?',
     opts:['En uformell sosial norm om å ikke tro at man er bedre enn andre','En norsk arbeidslov','En skattelov'], ans:0,
     exp:'Janteloven er en kulturell norm som vektlegger fellesskap og likhet framfor individuell skryt.' },
 
   { id:'ak-b1-4', level:'B1', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva betyr «tillit» i norsk arbeidsliv?',
+    type:'mc', q:'Hva innebærer «tillit» i norsk arbeidsliv?',
     opts:['Ansatte har stor frihet og autonomi fordi de forventes å levere resultater','En type arbeidsavtale','En regel om overtid'], ans:0,
     exp:'Tillit er grunnleggende i norsk arbeidsliv – frihet under ansvar er et sentralt prinsipp.' },
 
@@ -720,7 +720,7 @@ const QUESTIONS = [
     exp:'IA-arbeidet handler om å redusere sykefravær og inkludere alle i arbeidslivet.' },
 
   { id:'ak-b1-6', level:'B1', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'fill', q:'«___ dumping» betyr at utenlandske arbeidstakere jobber til under norske lønnsvilkår.',
+    type:'fill', q:'«___ dumping» betyr at utenlandske arbeidstakere har vilkår som er dårligere enn norske lønnsvilkår.',
     opts:['Sosial','Lønns','Digital'], ans:0,
     exp:'Sosial dumping er et alvorlig problem som undergrave norske lønns- og arbeidsvilkår.' },
 
@@ -731,27 +731,27 @@ const QUESTIONS = [
     exp:'Norsk ledelse er kjent for å være tillitsbasert, lite autoritær og fokusert på teamet.' },
 
   { id:'ak-b2-2', level:'B2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'tf', q:'Norge scorer konsekvent høyt på tillit og lavt på korrupsjon internasjonalt.',
+    type:'tf', q:'Norge scorer ofte høyt på tillit og lavt på korrupsjon internasjonalt.',
     ans:true,
     exp:'Riktig! Norge er blant verdens minst korrupte land (Transparency International) og scorer høyt på tillit.' },
 
   { id:'ak-b2-3', level:'B2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva er «psykologisk trygghet» på arbeidsplassen?',
+    type:'mc', q:'Hva menes med «psykologisk trygghet» på arbeidsplassen?',
     opts:['Et miljø der ansatte tør å si sin mening og ta risiko uten frykt for represalier','En ordning om psykologhjelp på jobb','En forsikring mot mobbing'], ans:0,
     exp:'Psykologisk trygghet øker innovasjon, læring og trivsel (Amy Edmondson).' },
 
   { id:'ak-b2-4', level:'B2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva er «arbeidslinja» i norsk politikk?',
+    type:'mc', q:'Hva menes med «arbeidslinja» i norsk politikk?',
     opts:['En politikk om at flest mulig skal delta i arbeidslivet framfor å leve av stønad','En regel om jernbanedrift','En ordning for permitteringer'], ans:0,
     exp:'Arbeidslinja er et kjernebegrep i norsk velferdspolitikk siden 1990-tallet.' },
 
   { id:'ak-b2-5', level:'B2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva er «tillitsreformen» i offentlig sektor?',
+    type:'mc', q:'Hva menes med «tillitsreformen» i offentlig sektor?',
     opts:['En reform som gir offentlig ansatte mer tillit og autonomi for å gi bedre tjenester','En reform som øker kontroll med offentlig ansatte','En pensjonsreform'], ans:0,
     exp:'Tillitsreformen (fra 2021) skal redusere detaljstyring og gi mer faglig frihet i offentlig sektor.' },
 
   { id:'ak-b2-6', level:'B2', cat:'arbeidskultur', catName:'Arbeidskultur', catIcon:'🤝', catColor:'#880E4F',
-    type:'mc', q:'Hva betyr «mangfold og inkludering» (M&I) på norske arbeidsplasser?',
+    type:'mc', q:'Hva betyr «mangfold og inkludering» på norske arbeidsplasser?',
     opts:['Bevisst arbeid for å sikre representasjon og likeverd for alle grupper','En type opplæringsplan','En lov om ansettelse av fremmedspråklige'], ans:0,
     exp:'M&I-arbeid handler om å verdsette ulikheter og sikre at alle har like muligheter.' },
 
@@ -764,11 +764,11 @@ const QUESTIONS = [
 
   { id:'cn-a1-2', level:'A1', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
     type:'mc', q:'Hva er NAV?',
-    opts:['Et sykehus','Et offentlig kontor som hjelper deg med jobb og stønad','En skole'], ans:1,
+    opts:['Et sykehus for voksne og barn','Et offentlig kontor som hjelper deg med jobb og stønad','En skole for eledre mennesker'], ans:1,
     exp:'NAV (Arbeids- og velferdsetaten) hjelper folk med jobb, sykepenger, dagpenger og mer.' },
 
   { id:'cn-a1-3', level:'A1', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
-    type:'tf', q:'Du skriver CV når du søker jobb.',
+    type:'tf', q:'Det er vanlig å levere en CV når du søker jobb.',
     ans:true,
     exp:'Riktig! CV er et viktig dokument når du søker jobb.' },
 
@@ -804,7 +804,7 @@ const QUESTIONS = [
     exp:'Riktig! En kort og oversiktlig CV er best. Arbeidsgiver har ikke tid til å lese mange sider.' },
 
   { id:'cn-a2-4', level:'A2', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
-    type:'mc', q:'Hva er en «motivasjonsbrief» (søknadsbrev)?',
+    type:'mc', q:'Hva er "en jobbsøknad"?',
     opts:['Et brev der du forklarer hvorfor du vil ha jobben','Et brev til familien','En medisinsk attest'], ans:0,
     exp:'I søknadsbrevet presenterer du deg selv og forklarer hvorfor du er rett person for jobben.' },
 
@@ -821,12 +821,12 @@ const QUESTIONS = [
   // B1
   { id:'cn-b1-1', level:'B1', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
     type:'mc', q:'Hva er en «aktivitetsplan» hos NAV?',
-    opts:['En plan for hva du skal gjøre for å komme i jobb','En treningsplan','En plan for ferie'], ans:0,
+    opts:['En plan for hva du skal gjøre for å komme i jobb','En treningsplan som gjelder mandag-fredag','En plan for ferie for de anssatte'], ans:0,
     exp:'Aktivitetsplanen er en felles plan mellom deg og NAV med konkrete steg mot arbeid.' },
 
   { id:'cn-b1-2', level:'B1', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
     type:'mc', q:'Hva er et «meldekort» hos NAV?',
-    opts:['Et skjema du sender NAV annenhver uke for å bekrefte at du er aktiv arbeidssøker','Et julekort til NAV','Et skjema for ny adresse'], ans:0,
+    opts:['Et skjema du sender NAV annenhver uke for å bekrefte at du er aktiv arbeidssøker','Et julekort til NAV om din jobbsituasjon','Et skjema for ny adresse'], ans:0,
     exp:'Meldekort sendes digitalt på nav.no. Glemmer du det, mister du ytelsen for perioden.' },
 
   { id:'cn-b1-3', level:'B1', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
@@ -840,7 +840,7 @@ const QUESTIONS = [
     exp:'Arbeidsgivere setter pris på samarbeidsevne, ansvarsfølelse, fleksibilitet og selvstendighet.' },
 
   { id:'cn-b1-5', level:'B1', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
-    type:'mc', q:'Hva er «hull i CV»?',
+    type:'mc', q:'Hva menes med et «hull i en CV»?',
     opts:['Perioder uten arbeid eller utdanning som du bør forklare positivt','Feil stavemåte i CV-en','Perioder med deltidsjobb'], ans:0,
     exp:'Hull er perioder uten registrert aktivitet. Forklar dem kort og positivt (f.eks. omsorg, reise, kurs).' },
 
@@ -856,8 +856,8 @@ const QUESTIONS = [
     exp:'ATS brukes av mange store bedrifter. Bruk nøkkelord fra stillingsannonsen i CV og søknad.' },
 
   { id:'cn-b2-2', level:'B2', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
-    type:'mc', q:'Hva er «kvalifiseringsprogrammet»?',
-    opts:['Et intensivt program for personer med svak tilknytning til arbeidslivet med tett NAV-oppfølging','Et kurs i norsk for innvandrere','Et program for ungdom som dropper ut'], ans:0,
+    type:'mc', q:'Hva slags program er «kvalifiseringsprogrammet/KVP»?',
+    opts:['Et  program for personer med svak tilknytning til arbeidslivet med tett NAV-oppfølging','Et kurs i norsk for innvandrere som ikke har fått seg jobb','Et program for ungdom som dropper ut av videregående skole'], ans:0,
     exp:'Kvalifiseringsprogrammet er for de med størst utfordringer og gir tett individuell oppfølging.' },
 
   { id:'cn-b2-3', level:'B2', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
@@ -866,9 +866,9 @@ const QUESTIONS = [
     exp:'Riktig! ATS-systemer matcher nøkkelord i søknaden mot kravene i stillingsannonsen.' },
 
   { id:'cn-b2-4', level:'B2', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
-    type:'mc', q:'Hva er en «elevator pitch» i jobbsammenheng?',
+    type:'mc', q:'Hva er en «pitch» i jobbsammenheng?',
     opts:['En kort og overbevisende selvpresentasjon på 30–60 sekunder','En heis-teknikk for intervjuer','Et brev til HR-avdelingen'], ans:0,
-    exp:'Elevator pitch brukes i nettverk og intervjuer – øv på å presentere deg selv kompakt og tydelig.' },
+    exp:'En pitch brukes i nettverk og intervjuer – øv på å presentere deg selv kompakt og tydelig.' },
 
   { id:'cn-b2-5', level:'B2', cat:'cv_nav', catName:'CV og NAV', catIcon:'📄', catColor:'#01579B',
     type:'mc', q:'Hva er forskjellen på kronologisk og funksjonell CV?',
