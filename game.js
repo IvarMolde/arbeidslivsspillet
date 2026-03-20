@@ -14,7 +14,7 @@ const QUESTIONS = [
 
   { id:'y-a1-2', level:'A1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'mc', q:'Hvem lager maten på en restaurant?',
-    opts:['en kokk','en lærere,'en elektriker'], ans:0,
+    opts:['en kokk','en lærere','en elektriker'], ans:0,
     exp:'En kokk lager mat på restaurant eller i kantine.' },
 
   { id:'y-a1-3', level:'A1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
