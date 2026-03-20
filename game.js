@@ -9,12 +9,12 @@ const QUESTIONS = [
   // A1
   { id:'y-a1-1', level:'A1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'mc', q:'Hvem hjelper syke mennesker på sykehuset?',
-    opts:['Renholder','Sykepleier','Bussjåfør'], ans:1,
+    opts:['Renholdere','Sykepleiere','Bussjåfører'], ans:1,
     exp:'En sykepleier jobber på sykehus og hjelper syke pasienter.' },
 
   { id:'y-a1-2', level:'A1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
-    type:'mc', q:'Hvem lager mat på restaurant?',
-    opts:['Kokk','Lærer','Elektriker'], ans:0,
+    type:'mc', q:'Hvem lager maten på en restaurant?',
+    opts:['en kokk','en lærere,'en elektriker'], ans:0,
     exp:'En kokk lager mat på restaurant eller i kantine.' },
 
   { id:'y-a1-3', level:'A1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
@@ -28,8 +28,8 @@ const QUESTIONS = [
     exp:'En renholder vasker og holder arbeidsplassen ren.' },
 
   { id:'y-a1-5', level:'A1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
-    type:'mc', q:'Hvem passer på barn i barnehagen?',
-    opts:['Barnehagelærer','Lege','Elektriker'], ans:0,
+    type:'mc', q:'Hvem har det pedagogiske ansvaret i en barnehage?',
+    opts:['en barnehagelærer','en lege','en elektriker'], ans:0,
     exp:'En barnehagelærer jobber i barnehagen og passer på barn.' },
 
   { id:'y-a1-6', level:'A1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
@@ -39,8 +39,8 @@ const QUESTIONS = [
 
   // A2
   { id:'y-a2-1', level:'A2', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
-    type:'mc', q:'Hva er en «stilling»?',
-    opts:['En plass å sitte','En jobb du søker på','En lønnsslippe'], ans:1,
+    type:'mc', q:'Hva er en «ledig stilling»?',
+    opts:['En plass å sitte','En jobb du kan søke på','En lønnsslipp'], ans:1,
     exp:'En stilling er en jobb du kan søke på hos en arbeidsgiver.' },
 
   { id:'y-a2-2', level:'A2', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
@@ -56,7 +56,7 @@ const QUESTIONS = [
   { id:'y-a2-4', level:'A2', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'mc', q:'Hva betyr «heltid»?',
     opts:['Du jobber halvparten av en arbeidsuke','Du jobber full arbeidsuke (37,5 timer)','Du jobber hjemme'], ans:1,
-    exp:'Heltid betyr full arbeidsuke, som i Norge er 37,5 timer.' },
+    exp:'Heltid betyr full arbeidsuke, som i Norge er 37,5/40 timer.' },
 
   { id:'y-a2-5', level:'A2', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'fill', q:'Jeg jobber ___ – det vil si kun noen timer per uke.',
@@ -65,14 +65,14 @@ const QUESTIONS = [
 
   { id:'y-a2-6', level:'A2', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'mc', q:'Hvilke yrker er vanlige i helsesektoren?',
-    opts:['Sykepleier og hjelpepleier','Bussjåfør og tømmermann','Kokk og renholder'], ans:0,
+    opts:['Sykepleier og hjelpepleier','Bussjåfør og snekker','Kokk og renholder'], ans:0,
     exp:'Sykepleiere og hjelpepleiere er vanlige yrker i helsesektoren.' },
 
   // B1
   { id:'y-b1-1', level:'B1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
-    type:'mc', q:'Hva betyr «fagbrev»?',
+    type:'mc', q:'Hva er et «fagbrev»?',
     opts:['Et brev til kollegaen din','Bevis på fullført yrkesfaglig opplæring','En jobbsøknad'], ans:1,
-    exp:'Fagbrev er et offentlig godkjent bevis på at du har fullført en yrkesfaglig utdanning.' },
+    exp:'Et fagbrev er et offentlig godkjent bevis på at du har fullført en yrkesfaglig utdanning.' },
 
   { id:'y-b1-2', level:'B1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'tf', q:'I Norge er det vanlig at sjefen har eget kontor atskilt fra de ansatte.',
@@ -81,8 +81,8 @@ const QUESTIONS = [
 
   { id:'y-b1-3', level:'B1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'mc', q:'Hva er forskjellen mellom heltid og deltid?',
-    opts:['Heltid = full arbeidsuke (37,5t), deltid = færre timer','Heltid = jobber hjemme, deltid = kontor','Ingen forskjell'], ans:0,
-    exp:'Heltid er full stilling (37,5 t/uke). Deltid er en lavere stillingsprosent.' },
+    opts:['Heltid = full arbeidsuke (37,5t / 40t), deltid = færre timer','Heltid = jobber hjemme, deltid = kontor','Ingen forskjell'], ans:0,
+    exp:'Heltid er full stilling (37,5 / 40 t/uke). Deltid er en lavere stillingsprosent.' },
 
   { id:'y-b1-4', level:'B1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'mc', q:'Hva er en «HMS-koordinator»?',
@@ -91,13 +91,13 @@ const QUESTIONS = [
 
   { id:'y-b1-5', level:'B1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'mc', q:'Hva er de mest etterspurte yrkene i Norge nå?',
-    opts:['Helse, barnehage og industri','IT og finans','Film og musikk'], ans:0,
-    exp:'Det er stor etterspørsel etter folk i helse, barnehage, industri og transport.' },
+    opts:['Helse, oppvekst og omsorg','Matproduksjon og bilindustri','Film og musikk'], ans:0,
+    exp:'Det er stor etterspørsel etter folk i helse, oppvekst og omsorg.' },
 
   { id:'y-b1-6', level:'B1', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
     type:'fill', q:'En ___ er en midlertidig jobb der du erstatter en som er syk.',
     opts:['vikar','fastansatt','lærling'], ans:0,
-    exp:'En vikar jobber midlertidig og erstatter en fast ansatt.' },
+    exp:'En vikar jobber midlertidig og erstatter en annen ansatt.' },
 
   // B2
   { id:'y-b2-1', level:'B2', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
@@ -111,7 +111,7 @@ const QUESTIONS = [
     exp:'80 % stilling betyr 80 % av normalarbeidstiden (37,5 t), som er ca. 30 timer per uke.' },
 
   { id:'y-b2-3', level:'B2', cat:'yrker', catName:'Yrker', catIcon:'👷', catColor:'#1F4E79',
-    type:'mc', q:'Hva er «prøvetid»?',
+    type:'mc', q:'Hva er «en prøvetid»?',
     opts:['En periode på inntil 6 måneder ved ny jobb med enklere oppsigelsesregler','En ferie ved nye jobber','En opplæringsperiode betalt av NAV'], ans:0,
     exp:'Prøvetid er maks 6 måneder. I denne perioden kan begge parter si opp med kortere frist.' },
 
@@ -175,7 +175,7 @@ const QUESTIONS = [
 
   { id:'h-a2-3', level:'A2', cat:'hms', catName:'HMS', catIcon:'⚠️', catColor:'#B71C1C',
     type:'mc', q:'Hva gjør du hvis du ser en farlig situasjon på jobb?',
-    opts:['Ignorer det','Si fra til nærmeste leder','Forlat arbeidsplassen'], ans:1,
+    opts:['Ignorerer det','Sier fra til nærmeste leder','Forlater arbeidsplassen'], ans:1,
     exp:'Du plikter å melde fra om farlige situasjoner til din leder umiddelbart.' },
 
   { id:'h-a2-4', level:'A2', cat:'hms', catName:'HMS', catIcon:'⚠️', catColor:'#B71C1C',
@@ -227,12 +227,12 @@ const QUESTIONS = [
   // B2
   { id:'h-b2-1', level:'B2', cat:'hms', catName:'HMS', catIcon:'⚠️', catColor:'#B71C1C',
     type:'mc', q:'Hva er Arbeidsmiljøloven (AML)?',
-    opts:['Loven som regulerer rettigheter og plikter i norsk arbeidsliv','En lov om pensjonsrettigheter','En lov om skatteregler'], ans:0,
+    opts:['Loven som regulerer rettigheter og plikter i norsk arbeidsliv','En lov om pensjonsrettigheter for personer over 67 år','En lov om skatteregler for alle som jobber i Norge'], ans:0,
     exp:'AML er den sentrale loven om arbeidsmiljø, stillingsvern og arbeidsforhold i Norge.' },
 
   { id:'h-b2-2', level:'B2', cat:'hms', catName:'HMS', catIcon:'⚠️', catColor:'#B71C1C',
     type:'mc', q:'Hva er «tilretteleggingsplikten»?',
-    opts:['Arbeidsgivers plikt til å tilpasse arbeidet for ansatte med nedsatt arbeidsevne','Plikt til å tilrettelegge møterom','Plikt til å tilby kantinemat'], ans:0,
+    opts:['Arbeidsgivers plikt til å tilpasse arbeidet for ansatte med nedsatt arbeidsevne','Plikt til å tilrettelegge møterom når det er mer en 5 personer i et møte','Plikt til å tilby kantinemat for alle med fast jobb'], ans:0,
     exp:'Arbeidsgiver plikter å tilrettelegge arbeidsoppgaver og arbeidssted for ansatte med nedsatt funksjonsevne.' },
 
   { id:'h-b2-3', level:'B2', cat:'hms', catName:'HMS', catIcon:'⚠️', catColor:'#B71C1C',
