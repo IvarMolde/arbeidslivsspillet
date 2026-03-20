@@ -1,5 +1,5 @@
 /* ============================================================
-   ARBEIDSLIVSSPILLET – Molde voksenopplæringssenter / MBO
+   ARBEIDSLIVSSPILLET – Molde voksenopplæringssenter
    ============================================================ */
 
 /* ---- QUESTION BANK ---- */
