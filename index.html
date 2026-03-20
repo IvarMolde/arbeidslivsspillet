@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arbeidslivsspillet – Molde voksenopplæringssenter</title>
+  <meta name="description" content="Lær om norsk arbeidsliv gjennom et morsomt og pedagogisk spill. MBO – Molde voksenopplæringssenter.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    /* === RESET & BASE === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #1F4E79;
+      --primary-dark: #163a5a;
+      --primary-light: #2E6FAF;
+      --accent: #F6AE2D;
+      --accent-dark: #d4921c;
+      --success: #1B5E20;
+      --success-bg: #E8F5E9;
+      --success-mid: #4CAF50;
+      --error: #B71C1C;
+      --error-bg: #FFEBEE;
+      --error-mid: #E53935;
+      --bg: #EFF6FF;
+      --card: #FFFFFF;
+      --text: #1A1A2E;
+      --text-light: #4A5568;
+      --border: #CBD5E0;
+      --radius: 14px;
+      --radius-sm: 8px;
+      --shadow: 0 4px 24px rgba(0,0,0,0.08);
+      --shadow-lg: 0 8px 40px rgba(0,0,0,0.14);
+      --transition: all 0.18s ease;
+    }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 1rem 0 3rem;
+      line-height: 1.6;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute; top: -100%; left: 1rem;
+      background: var(--primary); color: #fff;
+      padding: .5rem 1rem; border-radius: var(--radius-sm);
+      text-decoration: none; font-weight: 600; z-index: 9999;
+    }
+    .skip-link:focus { top: 1rem; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+    }
+
+    /* === LAYOUT === */
+    .container { width: 100%; max-width: 680px; padding: 0 1rem; }
+
+    /* === SCREENS === */
+    .screen { display: none; width: 100%; animation: fadeUp .3s ease; }
+    .screen.active { display: block; }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* === BUTTONS === */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      gap: .5rem; padding: .875rem 1.75rem;
+      border: none; border-radius: var(--radius-sm);
+      font-family: inherit; font-size: 1rem; font-weight: 700;
+      cursor: pointer; transition: var(--transition);
+      min-height: 48px; text-decoration: none; letter-spacing: .01em;
+    }
+    .btn-primary { background: var(--primary); color: #fff; }
+    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(31,78,121,.4); }
+    .btn-secondary { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+    .btn-secondary:hover { background: var(--primary); color: #fff; }
+    .btn-lg { font-size: 1.15rem; padding: 1rem 2rem; }
+    .btn-full { width: 100%; }
+    .btn-accent { background: var(--accent); color: #3a2800; }
+    .btn-accent:hover { background: var(--accent-dark); transform: translateY(-1px); }
+
+    /* === WELCOME SCREEN === */
+    .welcome-hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #2C6FAC 60%, #1a5fa0 100%);
+      color: #fff; border-radius: var(--radius);
+      padding: 2.5rem 2rem 2rem;
+      margin-bottom: 1.25rem;
+      position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .welcome-hero::before {
+      content: ''; position: absolute;
+      top: -40%; right: -15%; width: 55%; height: 200%;
+      background: rgba(255,255,255,.06); border-radius: 50%;
+    }
+    .welcome-hero::after {
+      content: ''; position: absolute;
+      bottom: -50%; left: -10%; width: 40%; height: 150%;
+      background: rgba(255,255,255,.04); border-radius: 50%;
+    }
+    .hero-icon { font-size: 3.5rem; display: block; margin-bottom: .75rem; position: relative; z-index: 1; }
+    .hero-title {
+      font-size: clamp(1.8rem, 5vw, 2.6rem);
+      font-weight: 900; letter-spacing: -.03em;
+      margin-bottom: .4rem; position: relative; z-index: 1;
+    }
+    .hero-sub { font-size: 1.05rem; opacity: .9; margin-bottom: .3rem; position: relative; z-index: 1; }
+    .hero-inst { font-size: .8rem; opacity: .7; position: relative; z-index: 1; }
+
+    .features-row {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: .75rem; margin-bottom: 1.25rem;
+    }
+    .feat {
+      background: var(--card); border-radius: var(--radius-sm);
+      padding: 1rem .75rem; text-align: center; box-shadow: var(--shadow);
+    }
+    .feat-icon { font-size: 1.8rem; display: block; margin-bottom: .4rem; }
+    .feat-text { font-size: .8rem; font-weight: 600; color: var(--text-light); line-height: 1.3; }
+
+    /* === LEVEL SELECT === */
+    .page-title { font-size: 1.5rem; font-weight: 800; margin-bottom: .25rem; }
+    .page-sub { color: var(--text-light); margin-bottom: 1.25rem; font-size: .95rem; }
+
+    .back-btn {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: none; border: none; color: var(--text-light);
+      font-family: inherit; font-size: .9rem; cursor: pointer;
+      padding: .5rem 0; margin-bottom: 1rem; transition: var(--transition);
+    }
+    .back-btn:hover { color: var(--primary); }
+
+    .level-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+
+    .level-card {
+      border: none; border-radius: var(--radius);
+      padding: 1.5rem; cursor: pointer;
+      text-align: left; font-family: inherit;
+      transition: var(--transition);
+      position: relative; overflow: hidden;
+      min-height: 150px; display: flex;
+      flex-direction: column; justify-content: space-between;
+      color: #fff;
+    }
+    .level-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .level-card:focus-visible { outline-offset: 4px; }
+
+    .lc-a1 { background: linear-gradient(135deg, #2E7D32, #388E3C); }
+    .lc-a2 { background: linear-gradient(135deg, #1565C0, #1976D2); }
+    .lc-b1 { background: linear-gradient(135deg, #E65100, #F57C00); }
+    .lc-b2 { background: linear-gradient(135deg, #6A1B9A, #8E24AA); }
+
+    .lc-badge { font-size: 2.2rem; font-weight: 900; letter-spacing: -.04em; }
+    .lc-name { font-size: 1rem; font-weight: 700; }
+    .lc-desc { font-size: .78rem; opacity: .85; margin-top: .2rem; }
+    .lc-emoji { position: absolute; right: 1rem; top: 1rem; font-size: 2.5rem; opacity: .25; }
+
+    /* === GAME HEADER === */
+    .game-topbar {
+      background: var(--primary); color: #fff;
+      border-radius: var(--radius); padding: 1rem 1.25rem;
+      margin-bottom: .75rem;
+    }
+    .topbar-row {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: .75rem;
+      flex-wrap: wrap; margin-bottom: .75rem;
+    }
+    .q-counter { font-weight: 700; font-size: .95rem; }
+    .score-box {
+      display: flex; align-items: center; gap: .4rem;
+      font-weight: 800; font-size: 1.1rem;
+    }
+    .score-star { color: var(--accent); }
+    .streak-box {
+      display: flex; align-items: center; gap: .3rem;
+      background: rgba(255,255,255,.15); padding: .25rem .7rem;
+      border-radius: 20px; font-size: .85rem; font-weight: 600;
+    }
+    .progress-bar {
+      width: 100%; height: 7px;
+      background: rgba(255,255,255,.25); border-radius: 4px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; background: var(--accent);
+      border-radius: 4px; transition: width .4s ease;
+    }
+
+    /* Timer */
+    .timer-track {
+      width: 100%; height: 5px;
+      background: var(--border); border-radius: 3px;
+      overflow: hidden; margin-bottom: .85rem;
+    }
+    .timer-fill {
+      height: 100%; background: #4CAF50;
+      border-radius: 3px; transition: width .1s linear, background .3s;
+    }
+    .timer-fill.warn { background: #FF9800; }
+    .timer-fill.danger { background: #F44336; }
+
+    /* Category badge */
+    .cat-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      padding: .35rem 1rem; border-radius: 20px;
+      font-size: .82rem; font-weight: 700; color: #fff;
+      margin-bottom: .85rem;
+    }
+
+    /* Question card */
+    .q-card {
+      background: var(--card); border-radius: var(--radius);
+      box-shadow: var(--shadow); padding: 1.5rem;
+      margin-bottom: .85rem;
+    }
+    .q-type-label {
+      display: block; font-size: .72rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: .08em;
+      color: var(--text-light); margin-bottom: .75rem;
+    }
+    .q-text {
+      font-size: clamp(.95rem, 2.5vw, 1.18rem);
+      font-weight: 600; line-height: 1.55; color: var(--text);
+    }
+    .blank {
+      display: inline-block; min-width: 110px;
+      border-bottom: 3px solid var(--primary);
+      text-align: center; color: var(--primary);
+      font-weight: 700; padding: 0 4px;
+    }
+
+    /* Options */
+    .options-list { display: flex; flex-direction: column; gap: .65rem; }
+
+    .opt-btn {
+      display: flex; align-items: center; gap: .9rem;
+      width: 100%; padding: .9rem 1.1rem;
+      background: var(--card); border: 2px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-family: inherit; font-size: .98rem; font-weight: 500;
+      color: var(--text); cursor: pointer; text-align: left;
+      transition: var(--transition); min-height: 54px;
+    }
+    .opt-btn:hover:not(:disabled) {
+      border-color: var(--primary);
+      background: rgba(31,78,121,.04);
+      transform: translateX(4px);
+    }
+    .opt-letter {
+      display: flex; align-items: center; justify-content: center;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--bg); color: var(--primary);
+      font-weight: 800; font-size: .85rem; flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .opt-btn:hover:not(:disabled) .opt-letter { background: var(--primary); color: #fff; }
+
+    .opt-btn.correct { border-color: var(--success-mid); background: var(--success-bg); color: var(--success); }
+    .opt-btn.correct .opt-letter { background: var(--success-mid); color: #fff; }
+    .opt-btn.incorrect { border-color: var(--error-mid); background: var(--error-bg); color: var(--error); }
+    .opt-btn.incorrect .opt-letter { background: var(--error-mid); color: #fff; }
+    .opt-btn:disabled { cursor: not-allowed; }
+
+    .opt-indicator { margin-left: auto; font-size: 1.1rem; flex-shrink: 0; }
+
+    /* Feedback */
+    .feedback {
+      border-radius: var(--radius-sm); padding: 1rem 1.25rem;
+      margin-top: .75rem; display: none;
+    }
+    .feedback.show { display: block; animation: fadeUp .25s ease; }
+    .feedback.correct { background: var(--success-bg); border: 1.5px solid var(--success-mid); }
+    .feedback.incorrect { background: var(--error-bg); border: 1.5px solid var(--error-mid); }
+    .fb-title {
+      font-weight: 700; font-size: 1.05rem;
+      display: flex; align-items: center; gap: .5rem; margin-bottom: .4rem;
+    }
+    .feedback.correct .fb-title { color: var(--success); }
+    .feedback.incorrect .fb-title { color: var(--error); }
+    .fb-text { font-size: .88rem; color: var(--text-light); line-height: 1.5; }
+    .next-row { display: flex; justify-content: flex-end; margin-top: .85rem; }
+
+    /* === RESULTS === */
+    .results-hero {
+      background: linear-gradient(135deg, var(--primary), #2C6FAC);
+      color: #fff; border-radius: var(--radius);
+      padding: 2.25rem 1.5rem; margin-bottom: 1.25rem;
+      text-align: center;
+    }
+    .res-emoji { font-size: 3.5rem; display: block; margin-bottom: .6rem; }
+    .res-title { font-size: 1.8rem; font-weight: 900; }
+    .res-sub { font-size: .95rem; opacity: .85; margin-top: .3rem; }
+    .stars-row { display: flex; justify-content: center; gap: .4rem; font-size: 2.2rem; margin: .85rem 0; }
+
+    .stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .85rem; margin-bottom: 1.25rem; }
+    .stat-card {
+      background: var(--card); border-radius: var(--radius-sm);
+      padding: 1.1rem; text-align: center; box-shadow: var(--shadow);
+    }
+    .stat-val { font-size: 1.9rem; font-weight: 900; color: var(--primary); display: block; }
+    .stat-lbl { font-size: .75rem; color: var(--text-light); font-weight: 600; margin-top: .2rem; }
+
+    .badges-card {
+      background: var(--card); border-radius: var(--radius);
+      padding: 1.25rem; box-shadow: var(--shadow); margin-bottom: 1.25rem;
+    }
+    .section-hd {
+      font-size: .8rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: .08em; color: var(--text-light); margin-bottom: .85rem;
+    }
+    .badges-row { display: flex; gap: .65rem; flex-wrap: wrap; }
+    .badge-chip {
+      display: flex; align-items: center; gap: .4rem;
+      padding: .4rem .9rem; border-radius: 20px;
+      font-size: .82rem; font-weight: 700;
+    }
+    .badge-chip.earned { background: linear-gradient(135deg, #F6AE2D, #F49A0B); color: #3a2800; }
+    .badge-chip.locked { background: var(--bg); color: var(--text-light); }
+
+    .res-actions { display: flex; gap: .85rem; flex-wrap: wrap; }
+    .res-actions .btn { flex: 1; min-width: 140px; }
+
+    /* Answer tally */
+    .tally-card {
+      background: var(--card); border-radius: var(--radius);
+      padding: 1.25rem; box-shadow: var(--shadow); margin-bottom: 1.25rem;
+    }
+    .tally-row {
+      display: flex; align-items: center; gap: .65rem;
+      padding: .4rem 0; border-bottom: 1px solid var(--border);
+      font-size: .85rem;
+    }
+    .tally-row:last-child { border-bottom: none; }
+    .tally-icon { font-size: 1.1rem; flex-shrink: 0; }
+    .tally-q { flex: 1; color: var(--text-light); line-height: 1.4; }
+    .tally-result { font-weight: 700; flex-shrink: 0; }
+    .tally-result.ok { color: var(--success); }
+    .tally-result.ko { color: var(--error); }
+
+    /* === QUIT BUTTON === */
+    .quit-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: rgba(255,255,255,.15); border: 1.5px solid rgba(255,255,255,.3);
+      color: #fff; border-radius: var(--radius-sm);
+      font-family: inherit; font-size: .8rem; font-weight: 700;
+      cursor: pointer; padding: .3rem .7rem; gap: .35rem;
+      transition: var(--transition); min-height: 36px; white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .quit-btn:hover { background: rgba(255,255,255,.28); border-color: rgba(255,255,255,.6); }
+    .quit-btn:focus-visible { outline-color: var(--accent); }
+
+    /* === MODAL DIALOG === */
+    .modal-overlay {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,.55); backdrop-filter: blur(3px);
+      z-index: 9990; display: flex;
+      align-items: center; justify-content: center;
+      padding: 1rem;
+      opacity: 0; pointer-events: none;
+      transition: opacity .2s ease;
+    }
+    .modal-overlay.open { opacity: 1; pointer-events: all; }
+
+    .modal {
+      background: var(--card); border-radius: var(--radius);
+      box-shadow: 0 20px 60px rgba(0,0,0,.3);
+      padding: 2rem 1.75rem; max-width: 380px; width: 100%;
+      text-align: center;
+      transform: scale(.9) translateY(10px);
+      transition: transform .2s ease;
+    }
+    .modal-overlay.open .modal { transform: scale(1) translateY(0); }
+
+    .modal-icon { font-size: 2.8rem; display: block; margin-bottom: .75rem; }
+    .modal-title { font-size: 1.25rem; font-weight: 800; margin-bottom: .5rem; }
+    .modal-sub { font-size: .9rem; color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.5; }
+    .modal-progress {
+      background: var(--bg); border-radius: var(--radius-sm);
+      padding: .65rem 1rem; margin-bottom: 1.5rem;
+      display: flex; justify-content: space-between; gap: 1rem;
+      font-size: .85rem;
+    }
+    .modal-progress span { font-weight: 700; color: var(--primary); }
+    .modal-btns { display: flex; flex-direction: column; gap: .65rem; }
+    .modal-btns .btn { justify-content: center; }
+
+    /* Confetti canvas */
+    #confetti-canvas {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none; z-index: 9998;
+    }
+
+    /* === RESPONSIVE === */
+    @media (max-width: 480px) {
+      .features-row { gap: .5rem; }
+      .feat { padding: .75rem .5rem; }
+      .feat-icon { font-size: 1.5rem; }
+      .level-grid { grid-template-columns: 1fr; }
+      .stats-grid { grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+      .stat-val { font-size: 1.5rem; }
+      .q-card { padding: 1.1rem; }
+      .welcome-hero { padding: 1.75rem 1.25rem 1.5rem; }
+    }
+
+    @media (max-width: 360px) {
+      .stats-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    /* === SHAKE ANIMATION === */
+    @keyframes shake {
+      0%,100% { transform: translateX(0); }
+      20%,60% { transform: translateX(-6px); }
+      40%,80% { transform: translateX(6px); }
+    }
+    .shake { animation: shake .35s ease; }
+
+    @keyframes popIn {
+      0% { transform: scale(.7); opacity: 0; }
+      70% { transform: scale(1.08); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    .pop-in { animation: popIn .35s ease forwards; }
+
+    /* Score pop animation */
+    @keyframes scorePop {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-40px) scale(1.3); opacity: 0; }
+    }
+    .score-pop {
+      position: fixed; font-size: 1.4rem; font-weight: 900;
+      color: var(--accent); pointer-events: none; z-index: 9999;
+      animation: scorePop .7s ease forwards;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Hopp til innhold</a>
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+  <div class="sr-only" role="status" aria-live="polite" id="sr-live"></div>
+
+  <main id="main" class="container">
+
+    <!-- ====== WELCOME ====== -->
+    <section id="screen-welcome" class="screen active" aria-label="Velkomstskjerm">
+      <div class="welcome-hero">
+        <span class="hero-icon" aria-hidden="true">🏆</span>
+        <h1 class="hero-title">Arbeidslivsspillet</h1>
+        <p class="hero-sub">Lær om norsk arbeidsliv på en morsom måte</p>
+        <p class="hero-inst">Molde voksenopplæringssenter – MBO</p>
+      </div>
+      <div class="features-row" role="list">
+        <div class="feat" role="listitem">
+          <span class="feat-icon" aria-hidden="true">🎯</span>
+          <p class="feat-text">15 spørsmål per runde</p>
+        </div>
+        <div class="feat" role="listitem">
+          <span class="feat-icon" aria-hidden="true">📊</span>
+          <p class="feat-text">4 nivåer A1–B2</p>
+        </div>
+        <div class="feat" role="listitem">
+          <span class="feat-icon" aria-hidden="true">⭐</span>
+          <p class="feat-text">Tjen poeng og stjerner</p>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg btn-full" onclick="showScreen('screen-level')">
+        🚀 Start spillet
+      </button>
+    </section>
+
+    <!-- ====== LEVEL SELECT ====== -->
+    <section id="screen-level" class="screen" aria-label="Velg nivå">
+      <button class="back-btn" onclick="showScreen('screen-welcome')" aria-label="Tilbake">← Tilbake</button>
+      <h1 class="page-title">Velg ditt nivå</h1>
+      <p class="page-sub">Velg nivået som passer deg</p>
+      <div class="level-grid">
+        <button class="level-card lc-a1" onclick="startGame('A1')" aria-label="A1 Nybegynner">
+          <span class="lc-emoji" aria-hidden="true">🌱</span>
+          <span class="lc-badge">A1</span>
+          <div>
+            <p class="lc-name">Nybegynner</p>
+            <p class="lc-desc">Enkle ord og setninger om arbeidsliv</p>
+          </div>
+        </button>
+        <button class="level-card lc-a2" onclick="startGame('A2')" aria-label="A2 Grunnleggende">
+          <span class="lc-emoji" aria-hidden="true">📚</span>
+          <span class="lc-badge">A2</span>
+          <div>
+            <p class="lc-name">Grunnleggende</p>
+            <p class="lc-desc">Enkle tekster og arbeidsscenarier</p>
+          </div>
+        </button>
+        <button class="level-card lc-b1" onclick="startGame('B1')" aria-label="B1 Selvstendig">
+          <span class="lc-emoji" aria-hidden="true">💪</span>
+          <span class="lc-badge">B1</span>
+          <div>
+            <p class="lc-name">Selvstendig</p>
+            <p class="lc-desc">Mer komplekse temaer og regler</p>
+          </div>
+        </button>
+        <button class="level-card lc-b2" onclick="startGame('B2')" aria-label="B2 Avansert">
+          <span class="lc-emoji" aria-hidden="true">🎓</span>
+          <span class="lc-badge">B2</span>
+          <div>
+            <p class="lc-name">Avansert</p>
+            <p class="lc-desc">Juridisk språk og komplekse situasjoner</p>
+          </div>
+        </button>
+      </div>
+    </section>
+
+    <!-- ====== QUIT MODAL ====== -->
+    <div class="modal-overlay" id="quit-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+      <div class="modal" id="quit-modal">
+        <span class="modal-icon" aria-hidden="true">🚪</span>
+        <h2 class="modal-title" id="modal-title">Avslutte spillet?</h2>
+        <p class="modal-sub" id="modal-desc">Fremgangen din i denne runden vil gå tapt.</p>
+        <div class="modal-progress" aria-label="Din nåværende fremgang">
+          <div>Spørsmål <span id="modal-qnum">0</span> / 15</div>
+          <div>⭐ <span id="modal-score">0</span> poeng</div>
+          <div>✅ <span id="modal-correct">0</span> riktige</div>
+        </div>
+        <div class="modal-btns">
+          <button class="btn btn-secondary btn-full" id="modal-cancel-btn" onclick="closeQuitModal()">
+            ↩ Fortsett spillet
+          </button>
+          <button class="btn btn-full" style="background:#E53935;color:#fff;" onclick="quitToMenu()">
+            🏠 Tilbake til startmenyen
+          </button>
+          <button class="btn btn-full" style="background:#FF9800;color:#fff;" onclick="quitAndRestart()">
+            🔄 Start på nytt (samme nivå)
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ====== GAME ====== -->
+    <section id="screen-game" class="screen" aria-label="Spill">
+      <div class="game-topbar">
+        <div class="topbar-row">
+          <button class="quit-btn" onclick="openQuitModal()" aria-label="Avslutt spillet">
+            🏠 Avslutt
+          </button>
+          <span class="q-counter" id="q-counter" aria-live="polite">Spørsmål 1 / 15</span>
+          <div class="streak-box" aria-label="Rekke" aria-live="polite">🔥 <span id="streak-num">0</span></div>
+          <div class="score-box" aria-label="Poeng" aria-live="polite">
+            <span class="score-star" aria-hidden="true">⭐</span>
+            <span id="score-num">0</span>
+          </div>
+        </div>
+        <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="15" aria-valuenow="0" id="prog-bar">
+          <div class="progress-fill" id="prog-fill" style="width:0%"></div>
+        </div>
+      </div>
+
+      <div class="timer-track" aria-hidden="true">
+        <div class="timer-fill" id="timer-fill" style="width:100%"></div>
+      </div>
+
+      <div id="cat-badge" class="cat-badge" style="background:var(--primary)">
+        <span id="cat-icon" aria-hidden="true">📋</span>
+        <span id="cat-name">Kategori</span>
+      </div>
+
+      <div class="q-card" id="q-card">
+        <span class="q-type-label" id="q-type-label">Flervalg</span>
+        <p class="q-text" id="q-text">Laster spørsmål…</p>
+      </div>
+
+      <div class="options-list" id="options-list" role="group" aria-labelledby="q-text"></div>
+
+      <div class="feedback" id="feedback" role="alert" aria-live="assertive">
+        <p class="fb-title" id="fb-title"></p>
+        <p class="fb-text" id="fb-text"></p>
+        <div class="next-row">
+          <button class="btn btn-primary" id="next-btn" onclick="nextQuestion()">Neste spørsmål →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== RESULTS ====== -->
+    <section id="screen-results" class="screen" aria-label="Resultater">
+      <div class="results-hero">
+        <span class="res-emoji" id="res-emoji" aria-hidden="true">🎉</span>
+        <h1 class="res-title" id="res-title">Bra jobbet!</h1>
+        <p class="res-sub" id="res-sub">Du fullførte spillet</p>
+        <div class="stars-row" id="stars-row" role="img" aria-label="Stjerner">⭐⭐⭐</div>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <span class="stat-val" id="s-score">0</span>
+          <span class="stat-lbl">Totale poeng</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val" id="s-correct">0/15</span>
+          <span class="stat-lbl">Riktige svar</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-val" id="s-streak">0</span>
+          <span class="stat-lbl">Beste rekke 🔥</span>
+        </div>
+      </div>
+
+      <div class="badges-card">
+        <p class="section-hd">Dine merker</p>
+        <div class="badges-row" id="badges-row" role="list"></div>
+      </div>
+
+      <div class="tally-card">
+        <p class="section-hd">Alle svar</p>
+        <div id="tally-list"></div>
+      </div>
+
+      <div class="res-actions">
+        <button class="btn btn-secondary" onclick="restartGame()">🔄 Spill igjen</button>
+        <button class="btn btn-primary" onclick="showScreen('screen-level')">🎯 Nytt nivå</button>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
